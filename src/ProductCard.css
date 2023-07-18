@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  background-color: rgb(255, 255, 193);
+  padding: 10px;
+}
+
+.imageContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-rows: auto;
+  justify-content: center;
+  grid-gap: 15px;
+}
+
+.productCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color: white;
+  box-shadow: 5px 5px 5px 0 gray;
+}
+
+.productCard img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.productCard .ratings {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+.productCard .ratings div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.productCard .ratings div:nth-child(1) span:nth-child(1) {
+  color: lightseagreen;
+}
+.productCard .ratings div:nth-child(2) span:nth-child(1) {
+  color: red;
+}
+
+.productCard h1 {
+  font-size: 1.4rem;
+  margin-top: 10px;
+}
+
+.productCard #download {
+  margin-top: 10px;
+  text-decoration: none;
+  color: white;
+  padding: 3px 6px;
+  background: rgb(177, 46, 177);
+  font-weight: 600;
+  font-size: medium;
+  border-radius: 30px;
+  font-size: 1em;
+}
+
+header {
+  display: flex;
+  width: 100%;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  background: rgb(255, 255, 193);
+  z-index: 2;
+}
+
+header .search {
+  display: flex;
+}
+
+header .search input {
+  width: 500px;
+  height: 45px;
+  border: none;
+  outline: none;
+  text-align: center;
+  font-size: larger;
+}
+
+header .search button {
+  width: 45px;
+  height: 45px;
+  border: none;
+  outline: none;
+  background: rgb(177, 46, 177);
+  color: white;
+}
+
+@media only screen and (max-width: 768px) {
+  body {
+    padding: 5px;
+  }
+
+  .imageContainer {
+    grid-gap: 10px;
+  }
+
+  .productCard {
+    padding: 5px;
+  }
+
+  .productCard img {
+    height: 150px;
+  }
+
+  header .search input {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .imageContainer {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+
+  .productCard img {
+    height: 120px;
+  }
+
+  header .search input {
+    width: 100%;
+    max-width: 200px;
+  }
+}
